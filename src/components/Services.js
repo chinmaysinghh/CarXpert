@@ -19,11 +19,11 @@ function ServiceCard({ title, description, image }) {
 function Services() {
   const services = [
     { title: 'Oil Change', description: 'Regular oil changes to keep your engine running smoothly.', image: 'images/oil-change.jpg' },
-    { title: 'Brake Service', description: 'Ensure your safety with our professional brake services.', image: 'images/brake-service.jpg' },
-    { title: 'Tire Rotation', description: 'Extend the life of your tires with regular rotations.', image: 'images/tire-rotation.jpg' },
-    { title: 'Engine Tune-up', description: 'Optimize your engine performance with our tune-up service.', image: 'images/engine-tuneup.jpg' },
-    { title: 'Battery Replacement', description: 'We offer quick and reliable battery replacement services.', image: 'images/battery-replacement.jpg' },
-    { title: 'Air Conditioning', description: 'Keep cool with our A/C repair and maintenance services.', image: 'images/air-conditioning.jpg' },
+    { title: 'Brake Service', description: 'Ensure your safety with our professional brake services.', image: 'images/oil-change.jpg' },
+    { title: 'Tire Rotation', description: 'Extend the life of your tires with regular rotations.', image: 'images/oil-change.jpg' },
+    { title: 'Engine Tune-up', description: 'Optimize your engine performance with our tune-up service.', image: 'images/oil-change.jpg' },
+    { title: 'Battery Replacement', description: 'We offer quick and reliable battery replacement services.', image: 'images/oil-change.jpg' },
+    { title: 'Air Conditioning', description: 'Keep cool with our A/C repair and maintenance services.', image: 'images/oil-change.jpg' },
   ];
 
   return (
