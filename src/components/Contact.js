@@ -56,11 +56,17 @@ function Contact() {
           <input type="date" name="date" placeholder="Preferred Date" required className="w-full p-3 mb-4 bg-gray-700 rounded" onChange={handleChange} />
           <select name="service" required className="w-full p-3 mb-4 bg-gray-700 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" onChange={handleChange}>
             <option value="">Select Service</option>
-            <option value="oil-change">Oil Change</option>
-            <option value="car-wash">Car Wash</option>
-            <option value="tire-change">Tire Change</option>
-            <option value="general-maintenance">General Maintenance</option>
-            <option value="detailing">Detailing</option>
+            <option value="oil-change">Car Health Check</option>
+            <option value="car-wash">Detailing</option>
+            <option value="tire-change">PPF</option>
+            <option value="general-maintenance">Ceramic Coat</option>
+            <option value="detailing">Oil Change</option>
+            <option value="detailing">Tire Rotation</option>
+            <option value="detailing">Battery Check</option>
+            <option value="detailing">Brake Service</option>
+            <option value="detailing">AC Repair</option>
+            <option value="detailing">Engine Tune</option>
+            <option value="detailing">Wheel Alignment</option>
           </select>
           <input type="text" name="vehicleNumber" placeholder="Vehicle Number" required className="w-full p-3 mb-4 bg-gray-700 rounded" onChange={handleChange} />
           <textarea name="message" placeholder="Message" required className="w-full p-3 mb-4 bg-gray-700 rounded h-32" onChange={handleChange}></textarea>
