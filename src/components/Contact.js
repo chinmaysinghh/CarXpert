@@ -24,9 +24,11 @@ function Contact() {
           <input type="text" name="vehicle-number" placeholder="Vehicle Number" required className="w-full p-3 mb-4 bg-gray-700 rounded" />
           <textarea name="message" placeholder="Message" required className="w-full p-3 mb-4 bg-gray-700 rounded h-32"></textarea>
           
-          <button type="submit" className="w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-4 rounded transition duration-300">
-            <FontAwesomeIcon icon={faPaperPlane} /> Submit
-          </button>
+          <div className="flex justify-center">
+  <button type="submit" className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-full transition duration-300 transform hover:-translate-y-1 w-64">
+    <FontAwesomeIcon icon={faPaperPlane} /> Submit
+  </button>
+</div>
         </form>
       </div>
     </section>
