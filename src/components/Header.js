@@ -39,11 +39,27 @@ function Header() {
         {isMenuOpen && (
           <div className="fixed top-0 left-0 w-full h-full bg-gray-800 flex items-center justify-center z-50">
             <div className="container mx-auto px-5 py-4">
-              <ul className="flex flex-col items-center space-y-4">
-                <li><a href="#hero" className="text-white hover:text-blue-400 text-2xl" onClick={() => setIsMenuOpen(false)}><FontAwesomeIcon icon={faHome} /> Home</a></li>
-                <li><a href="#services" className="text-white hover:text-blue-400 text-2xl" onClick={() => setIsMenuOpen(false)}><FontAwesomeIcon icon={faTools} /> Services</a></li>
-                <li><a href="#about" className="text-white hover:text-blue-400 text-2xl" onClick={() => setIsMenuOpen(false)}><FontAwesomeIcon icon={faInfoCircle} /> About Us</a></li>
-                <li><a href="#contact" className="text-white hover:text-blue-400 text-2xl" onClick={() => setIsMenuOpen(false)}><FontAwesomeIcon icon={faEnvelope} /> Contact</a></li>
+              <ul className="flex flex-col items-center space-y-10">
+                <li>
+                  <a href="#hero" className="text-white hover:text-blue-400 text-2xl uppercase" onClick={() => setIsMenuOpen(false)}>
+                    <FontAwesomeIcon icon={faHome} /> HOME
+                  </a>
+                </li>
+                <li>
+                  <a href="#services" className="text-white hover:text-blue-400 text-2xl uppercase" onClick={() => setIsMenuOpen(false)}>
+                    <FontAwesomeIcon icon={faTools} /> SERVICES
+                  </a>
+                </li>
+                <li>
+                  <a href="#about" className="text-white hover:text-blue-400 text-2xl uppercase" onClick={() => setIsMenuOpen(false)}>
+                    <FontAwesomeIcon icon={faInfoCircle} /> ABOUT US
+                  </a>
+                </li>
+                <li>
+                  <a href="#contact" className="text-white hover:text-blue-400 text-2xl uppercase" onClick={() => setIsMenuOpen(false)}>
+                    <FontAwesomeIcon icon={faEnvelope} /> CONTACT
+                  </a>
+                </li>
               </ul>
             </div>
           </div>
@@ -52,10 +68,10 @@ function Header() {
         {/* Desktop Menu */}
         <nav className="md:flex md:space-x-8 hidden">
           <ul className="flex space-x-8">
-            <li><a href="#hero" className="text-white hover:text-blue-400 transition-colors duration-300"><FontAwesomeIcon icon={faHome} /> Home</a></li>
-            <li><a href="#services" className="text-white hover:text-blue-400 transition-colors duration-300"><FontAwesomeIcon icon={faTools} /> Services</a></li>
-            <li><a href="#about" className="text-white hover:text-blue-400 transition-colors duration-300"><FontAwesomeIcon icon={faInfoCircle} /> About Us</a></li>
-            <li><a href="#contact" className="text-white hover:text-blue-400 transition-colors duration-300"><FontAwesomeIcon icon={faEnvelope} /> Contact</a></li>
+            <li><a href="#hero" className="text-white hover:text-blue-400 transition-colors duration-300 uppercase"><FontAwesomeIcon icon={faHome} /> HOME</a></li>
+            <li><a href="#services" className="text-white hover:text-blue-400 transition-colors duration-300 uppercase"><FontAwesomeIcon icon={faTools} /> SERVICES</a></li>
+            <li><a href="#about" className="text-white hover:text-blue-400 transition-colors duration-300 uppercase"><FontAwesomeIcon icon={faInfoCircle} /> ABOUT US</a></li>
+            <li><a href="#contact" className="text-white hover:text-blue-400 transition-colors duration-300 uppercase"><FontAwesomeIcon icon={faEnvelope} /> CONTACT</a></li>
           </ul>
         </nav>
       </div>

@@ -13,7 +13,17 @@ function Contact() {
           <input type="tel" name="phone" placeholder="Phone Number" required className="w-full p-3 mb-4 bg-gray-700 rounded" />
           <input type="text" name="car-model" placeholder="Car Model" required className="w-full p-3 mb-4 bg-gray-700 rounded" />
           <input type="date" name="date" placeholder="Preferred Date" required className="w-full p-3 mb-4 bg-gray-700 rounded" />
+          <select name="service" required className="w-full p-3 mb-4 bg-gray-700 rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
+            <option value="">Select Service</option>
+            <option value="oil-change">Oil Change</option>
+            <option value="car-wash">Car Wash</option>
+            <option value="tire-change">Tire Change</option>
+            <option value="general-maintenance">General Maintenance</option>
+            <option value="detailing">Detailing</option>
+          </select>
+          <input type="text" name="vehicle-number" placeholder="Vehicle Number" required className="w-full p-3 mb-4 bg-gray-700 rounded" />
           <textarea name="message" placeholder="Message" required className="w-full p-3 mb-4 bg-gray-700 rounded h-32"></textarea>
+          
           <button type="submit" className="w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-4 rounded transition duration-300">
             <FontAwesomeIcon icon={faPaperPlane} /> Submit
           </button>
