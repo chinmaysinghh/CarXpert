@@ -5,7 +5,7 @@ import { faCalendarCheck } from '@fortawesome/free-solid-svg-icons';
 function Hero() {
   return (
     <section id="hero" className="relative bg-gray-900 h-screen flex flex-col justify-center items-center text-center text-white px-5" data-aos="fade-in">
-      <div className="absolute inset-0 bg-cover bg-center bg-no-repeat md:bg-fixed" style={{backgroundImage: "url('images/hero8.png')"}}></div>
+      <div className="absolute inset-0 bg-cover bg-center bg-no-repeat md:bg-fixed hero-background"></div>
       <div className="absolute inset-0 bg-black opacity-30"></div>
       <div className="relative z-10">
         <h2 className="text-4xl md:text-5xl font-bold mb-6 animate-fadeInUp">Welcome to CarXpert</h2>
@@ -13,6 +13,18 @@ function Hero() {
           <FontAwesomeIcon icon={faCalendarCheck} /> Book a Service
         </a>
       </div>
+      <style jsx>{`
+        @media (min-width: 768px) {
+          .hero-background {
+            background-image: url('images/hero2.png');
+          }
+        }
+        @media (max-width: 767px) {
+          .hero-background {
+            background-image: url('images/hero3.png');
+          }
+        }
+      `}</style>
     </section>
   );
 }
