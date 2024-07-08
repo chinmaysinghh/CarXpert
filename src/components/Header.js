@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCar, faHome, faTools, faInfoCircle, faEnvelope, faBars } from '@fortawesome/free-solid-svg-icons';
+import { faCar, faHome, faTools, faInfoCircle, faEnvelope, faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
 
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -39,6 +39,13 @@ function Header() {
         {isMenuOpen && (
           <div className="fixed top-0 left-0 w-full h-full bg-gray-800 flex items-center justify-center z-50">
             <div className="container mx-auto px-5 py-4">
+              {/* Close button */}
+              <button 
+                className="absolute top-5 right-5 text-white"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                <FontAwesomeIcon icon={faTimes} className="text-2xl" />
+              </button>
               <ul className="flex flex-col items-center space-y-10">
                 <li>
                   <a href="#hero" className="text-white hover:text-blue-400 text-2xl uppercase" onClick={() => setIsMenuOpen(false)}>
