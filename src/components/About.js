@@ -11,7 +11,7 @@ function About() {
           </div>
           <div className="max-w-lg text-center md:text-left">
             <p className="text-lg text-gray-700 leading-relaxed">
-              Welcome to our car service center, where quality meets expertise. We specialize in providing a wide range of services to enhance your driving experience and maintain your vehicle's peak performance. Our team of dedicated professionals ensures your car receives the care it deserves, from routine maintenance to complex repairs.
+              Welcome to CarXpert, where quality meets expertise. We specialize in providing a wide range of services to enhance your driving experience and maintain your vehicle's peak performance. Our team of dedicated professionals ensures your car receives the care it deserves, from routine maintenance to complex repairs.
             </p>
             <p className="text-lg text-gray-700 leading-relaxed mt-4">
               Whether you need a simple oil change or intricate engine diagnostics, we are here to ensure your car stays in top condition. Trust us with your vehicle, and experience unparalleled service and customer satisfaction.

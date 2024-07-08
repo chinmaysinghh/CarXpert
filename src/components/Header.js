@@ -46,7 +46,7 @@ function Header() {
               >
                 <FontAwesomeIcon icon={faTimes} className="text-2xl" />
               </button>
-              <ul className="flex flex-col items-center space-y-10">
+              <ul className="flex flex-col items-center space-y-20">
                 <li>
                   <a href="#hero" className="text-white hover:text-blue-400 text-2xl uppercase" onClick={() => setIsMenuOpen(false)}>
                     <FontAwesomeIcon icon={faHome} /> HOME
