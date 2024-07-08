@@ -1,5 +1,3 @@
-// App.js
-
 import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
@@ -13,6 +11,10 @@ import AdminArea from './components/AdminArea';
 
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+
+// Import ToastContainer from react-toastify
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   useEffect(() => {
@@ -29,6 +31,18 @@ function App() {
     <Router>
       <div className="bg-gray-100 text-gray-800">
         <Header />
+        {/* ToastContainer renders globally for notifications */}
+        <ToastContainer
+          position="top-center"
+          autoClose={3000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+        />
         <Routes>
           <Route path="/" element={
             <>
