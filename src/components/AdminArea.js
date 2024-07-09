@@ -76,13 +76,13 @@ function AdminArea() {
               className={`px-4 py-2 mr-2 rounded ${showContactData ? 'bg-blue-500 text-white' : 'bg-gray-300 text-gray-600'}`}
               onClick={() => setShowContactData(true)}
             >
-              Contact Form Data
+              Contact Info
             </button>
             <button
               className={`px-4 py-2 rounded ${!showContactData ? 'bg-green-500 text-white' : 'bg-gray-300 text-gray-600'}`}
               onClick={() => setShowContactData(false)}
             >
-              Service Form Data
+              Service Info
             </button>
           </div>
           {showContactData ? (
@@ -119,7 +119,7 @@ function AdminArea() {
                   className={`bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-full transition duration-300 transform hover:-translate-y-1 flex items-center justify-center ${contactData.length === 0 && 'opacity-50 cursor-not-allowed'}`}
                   disabled={contactData.length === 0}
                 >
-                  Export Contact Data <FontAwesomeIcon icon={faFileExcel} className="ml-2" />
+                  Export Contact <FontAwesomeIcon icon={faFileExcel} className="ml-2" />
                 </button>
             </>
           ) : (
@@ -179,7 +179,7 @@ function AdminArea() {
                   className={`bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-full transition duration-300 transform hover:-translate-y-1 flex items-center justify-center ${serviceData.length === 0 && 'opacity-50 cursor-not-allowed'}`}
                   disabled={serviceData.length === 0}
                 >
-                  Export Service Data <FontAwesomeIcon icon={faFileExcel} className="ml-2" />
+                  Export Booking <FontAwesomeIcon icon={faFileExcel} className="ml-2" />
                 </button>
             </>
           )}
