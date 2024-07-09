@@ -29,7 +29,7 @@ function App() {
   return (
     <Router>
       <div className="bg-gray-100 text-gray-800">
-        <Preloader /> {/* Add Preloader component here */}
+        <Preloader /> {/* Here I have added Preloader component */}
         <Header />
         <ToastContainer
           position="top-center"
