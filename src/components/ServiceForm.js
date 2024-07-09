@@ -90,7 +90,9 @@ function ServiceForm() {
               ))}
             </select>
             <input type="date" name="date" placeholder="Preferred Date" required className="w-full p-3 bg-gray-200 rounded" onChange={handleChange} />
-            <input type="time" name="time" placeholder="Preferred Time" required className="w-full p-3 bg-gray-200 rounded" onChange={handleChange} style={{ minWidth: '180px' }} />
+          </div>
+          <div className="grid grid-cols-2 gap-6 mt-6">
+            <input type="time" name="time" placeholder="Preferred Time" required className="w-full p-3 bg-gray-200 rounded" onChange={handleChange} />
             <select name="dropOrPickup" className="w-full p-3 bg-gray-200 rounded" onChange={handleChange}>
               <option value="">Select Option</option>
               <option value="drop-off">Drop-off</option>
