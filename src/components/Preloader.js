@@ -27,7 +27,7 @@ const Preloader = () => {
     const timer = setTimeout(() => {
       setIsLoading(false);
       document.getElementById('main-content').style.display = 'block';
-    }, 3000);
+    }, 2000); // Reduced duration to 2 seconds
 
     return () => clearTimeout(timer);
   }, []);

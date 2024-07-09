@@ -1,10 +1,16 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowDown } from '@fortawesome/free-solid-svg-icons';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
-function ServiceCard({ title, description, image }) {
+function ServiceCard({ title, description, image, aosDelay }) {
   return (
-    <div className="relative h-64 bg-white rounded-lg shadow-md overflow-hidden transition-all duration-500 transform hover:-translate-y-2 hover:shadow-lg" data-aos="fade-up" data-aos-delay="100">
+    <div 
+      className="relative h-64 bg-white rounded-lg shadow-md overflow-hidden transition-all duration-500 transform hover:-translate-y-2 hover:shadow-lg" 
+      data-aos="fadeInUp" 
+      data-aos-delay={aosDelay}
+    >
       <img 
         src={image} 
         alt={title} 
@@ -21,6 +27,10 @@ function ServiceCard({ title, description, image }) {
 function Services() {
   const [showAllServices, setShowAllServices] = useState(false);
 
+  useEffect(() => {
+    AOS.init({ duration: 1000, once: true });
+  }, []);
+
   const services = [
     { title: 'Car Health Check', description: 'Ensure your car runs smoothly and safely with a check-up covering everything from the engine to the brakes.', image: 'images/healthcheck.jpg' },
     { title: 'Detailing', description: 'Restore your car’s interior and exterior to pristine condition with our professional detailing service, giving it a fresh and clean look.', image: 'images/detailing.jpg' },
@@ -36,7 +46,6 @@ function Services() {
     { title: 'Wheel Alignment', description: 'Ensure even tire wear and optimal handling with our precision wheel alignment service, improving your driving experience and safety.', image: 'images/wheelalign.jpg' },
   ];
 
-  // Show only the first 6 services or all services based on showAllServices state
   const visibleServices = showAllServices ? services : services.slice(0, 6);
 
   const toggleShowAll = () => {
@@ -44,11 +53,17 @@ function Services() {
   };
 
   return (
-    <section id="services" className="py-20 px-5" data-aos="fade-up">
+    <section id="services" className="py-20 px-5" data-aos="fadeInUp">
       <h2 className="text-4xl font-bold text-center mb-12 text-gray-800 relative after:content-[''] after:block after:w-20 after:h-1 after:bg-blue-500 after:mx-auto after:mt-4">Our Services</h2>
       <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {visibleServices.map((service, index) => (
-          <ServiceCard key={index} title={service.title} description={service.description} image={service.image} />
+          <ServiceCard 
+            key={index} 
+            title={service.title} 
+            description={service.description} 
+            image={service.image} 
+            aosDelay={index * 100} // Adding delay to each service card
+          />
         ))}
       </div>
       {!showAllServices && (
@@ -56,7 +71,9 @@ function Services() {
           <a
             href="#viewAllServices"
             onClick={toggleShowAll}
-            className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-full transition duration-300 transform hover:-translate-y-1 flex items-center"
+            className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-full transition duration-300 transform hover:-translate-y-1" 
+            data-aos="zoom-in" 
+            data-aos-delay="200"
           >
             View All <FontAwesomeIcon icon={faArrowDown} className="ml-2" />
           </a>

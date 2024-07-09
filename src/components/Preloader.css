@@ -12,8 +12,9 @@
         transform: translate(2px, 1px) rotate(0deg);
     }
 
-    /* Other keyframes definitions */
-
+    100% {
+        transform: translate(2px, 1px) rotate(360deg);
+    }
 }
 
 @keyframes strikes {
@@ -87,7 +88,8 @@ body {
     width: 5px;
     overflow: hidden;
     vertical-align: bottom;
-    animation: dots 1.5s linear infinite;
+    animation: dots 0.75s linear infinite;
+    /* Reduced duration to 0.75s */
     transition: 1s;
 }
 
@@ -190,7 +192,8 @@ body {
         linear-gradient(90deg, transparent 45%, var(--border-color) 46%, var(--border-color) 54%, transparent 55%),
         linear-gradient(0deg, transparent 45%, var(--border-color) 46%, var(--border-color) 54%, transparent 55%),
         radial-gradient(var(--border-color) 29%, transparent 30%, transparent 50%, var(--border-color) 51%), var(--background-color);
-    animation-name: spin;
+    animation: spin 1s linear infinite;
+    /* Reduced duration to 1s */
 }
 
 .car-detail.wheel2 {
