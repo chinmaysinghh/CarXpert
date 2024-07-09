@@ -23,8 +23,8 @@ function Services() {
 
   const services = [
     { title: 'Car Health Check', description: 'Ensure your car runs smoothly and safely with a check-up covering everything from the engine to the brakes.', image: 'images/healthcheck.jpg' },
-    { title: 'Detailing', description: 'Restore your car’sOptimize your engine performance with our tune-up service.', image: 'images/detailing.jpg' },
-    { title: 'Battery Replacement', description: 'We offer quick and reliable battery replacement ser interior and exterior to pristine condition with our professional detailing service, giving it a fresh and clean look.', image: 'images/battery.jpg' },
+    { title: 'Detailing', description: 'Restore your car’s interior and exterior to pristine condition with our professional detailing service, giving it a fresh and clean look.', image: 'images/detailing.jpg' },
+    { title: 'Battery Replacement', description: 'Swap out your old battery for a new one to guarantee reliable performance and prevent inconvenient breakdowns. Keep your car powered and ready to go.', image: 'images/battery.jpg' },
     { title: 'PPF (Paint Protection Film)', description: 'Protect your car’s paint from scratches and chips with a durable, transparent film that keeps it looking new.', image: 'images/ppf.jpg' },
     { title: 'Ceramic Coat', description: 'Enhance your car’s appearance and protect it from dirt, UV rays, and minor scratches with our long-lasting ceramic coating.', image: 'images/ceramic.jpg' },
     { title: 'Oil Change', description: 'Keep your engine in peak condition with regular oil changes, including filter replacements for optimal performance.', image: 'images/oil.jpg' },
