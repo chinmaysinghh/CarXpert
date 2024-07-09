@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCar, faHome, faTools, faInfoCircle, faEnvelope, faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
+import { faCar, faHome, faTools, faInfoCircle, faEnvelope, faBars, faTimes, faCalendarCheck } from '@fortawesome/free-solid-svg-icons';
 
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -63,6 +63,11 @@ function Header() {
                   </a>
                 </li>
                 <li>
+                  <a href="#serviceForm" className="text-white hover:text-blue-400 text-2xl uppercase" onClick={() => setIsMenuOpen(false)}>
+                    <FontAwesomeIcon icon={faCalendarCheck} /> BOOKING
+                  </a>
+                </li>
+                <li>
                   <a href="#contact" className="text-white hover:text-blue-400 text-2xl uppercase" onClick={() => setIsMenuOpen(false)}>
                     <FontAwesomeIcon icon={faEnvelope} /> CONTACT
                   </a>
@@ -78,6 +83,7 @@ function Header() {
             <li><a href="#hero" className="text-white hover:text-blue-400 transition-colors duration-300 uppercase"><FontAwesomeIcon icon={faHome} /> HOME</a></li>
             <li><a href="#services" className="text-white hover:text-blue-400 transition-colors duration-300 uppercase"><FontAwesomeIcon icon={faTools} /> SERVICES</a></li>
             <li><a href="#about" className="text-white hover:text-blue-400 transition-colors duration-300 uppercase"><FontAwesomeIcon icon={faInfoCircle} /> ABOUT US</a></li>
+            <li><a href="#serviceForm" className="text-white hover:text-blue-400 transition-colors duration-300 uppercase"><FontAwesomeIcon icon={faCalendarCheck} /> BOOKING</a></li>
             <li><a href="#contact" className="text-white hover:text-blue-400 transition-colors duration-300 uppercase"><FontAwesomeIcon icon={faEnvelope} /> CONTACT</a></li>
           </ul>
         </nav>

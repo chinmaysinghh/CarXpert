@@ -2,7 +2,7 @@ import React from 'react';
 
 function About() {
   return (
-    <section id="about" className="py-20 px-5 bg-gray-200" data-aos="fade-up">
+    <section id="about" className="py-20 px-5 bg-white" data-aos="fade-up">
       <div className="container mx-auto">
         <h2 className="text-4xl font-bold text-center mb-8 text-gray-800 relative after:content-[''] after:block after:w-20 after:h-1 after:bg-blue-500 after:mx-auto after:mt-4">About Us</h2>
         <div className="flex flex-col md:flex-row items-center justify-center space-y-8 md:space-y-0 md:space-x-16">

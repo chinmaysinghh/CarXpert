@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowDown } from '@fortawesome/free-solid-svg-icons'; // Assuming you want a downward arrow
+import { faArrowDown } from '@fortawesome/free-solid-svg-icons';
 
 function ServiceCard({ title, description, image }) {
   return (

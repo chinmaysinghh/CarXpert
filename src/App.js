@@ -5,6 +5,7 @@ import Header from './components/Header';
 import Hero from './components/Hero';
 import Services from './components/Services';
 import About from './components/About';
+import ServiceForm from './components/ServiceForm'; // Import ServiceForm component
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import AdminArea from './components/AdminArea';
@@ -49,6 +50,7 @@ function App() {
               <Hero />
               <Services />
               <About />
+              <ServiceForm /> {/* Add ServiceForm component here */}
               <Contact />
               <Footer />
             </>
