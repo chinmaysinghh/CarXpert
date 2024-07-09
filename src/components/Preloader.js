@@ -1,8 +1,27 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import './Preloader.css';
 
 const Preloader = () => {
   const [isLoading, setIsLoading] = useState(true);
+  const [isScrolling, setIsScrolling] = useState(false);
+  const scrollTimeout = useRef(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolling(true);
+      clearTimeout(scrollTimeout.current);
+      scrollTimeout.current = setTimeout(() => {
+        setIsScrolling(false);
+      }, 150); // Adjust timeout as needed
+    };
+
+    document.addEventListener('scroll', handleScroll);
+
+    return () => {
+      document.removeEventListener('scroll', handleScroll);
+      clearTimeout(scrollTimeout.current);
+    };
+  }, []);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -18,7 +37,7 @@ const Preloader = () => {
   }
 
   return (
-    <div className="loading-window">
+    <div className={`loading-window ${isScrolling ? 'paused' : ''}`}>
       <div className="car">
         <div className="strike"></div>
         <div className="strike strike2"></div>
