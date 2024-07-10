@@ -4,7 +4,7 @@ import { faCalendarCheck } from '@fortawesome/free-solid-svg-icons';
 
 function Hero() {
   return (
-    <section id="hero" className="relative bg-gray-900 h-screen flex flex-col justify-center items-center text-center text-white px-5" data-aos="fade-in">
+    <section id="hero" className="relative bg-white h-screen flex flex-col justify-center items-center text-center text-white px-5" data-aos="fade-in">
       <div className="absolute inset-0 bg-cover bg-center bg-no-repeat md:bg-fixed hero-background"></div>
       <div className="absolute inset-0 bg-black opacity-30"></div>
       <div className="relative z-10">
@@ -16,12 +16,12 @@ function Hero() {
       <style jsx>{`
         @media (min-width: 768px) {
           .hero-background {
-            background-image: url('images/hero13.jpg');
+            background-image: url('images/hero12 (1).jpg');
           }
         }
         @media (max-width: 767px) {
           .hero-background {
-            background-image: url('images/hero13.jpg');
+            background-image: url('images/hero14.jpg');
           }
         }
       `}</style>
