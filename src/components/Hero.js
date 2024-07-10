@@ -15,7 +15,7 @@ function Hero() {
           playsInline
         ></video>
         <video
-          className="hidden md:block absolute inset-0 w-full h-full object-cover"
+          className="block md:hidden absolute inset-0 w-full h-full object-cover"
           src="videos/bgvideo2.mp4"
           autoPlay
           loop
