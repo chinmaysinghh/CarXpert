@@ -8,7 +8,7 @@ function Hero() {
       <div className="absolute inset-0 w-full h-full">
         <video
           className="hidden md:block absolute inset-0 w-full h-full object-cover"
-          src="videos/bgdesktop.mp4"
+          src="videos/bgvideo2.mp4"
           autoPlay
           loop
           muted
@@ -16,7 +16,7 @@ function Hero() {
         ></video>
         <video
           className="block md:hidden absolute inset-0 w-full h-full object-cover"
-          src="videos/bgmobile.mp4"
+          src="videos/bgvideo2.mp4"
           autoPlay
           loop
           muted
