@@ -16,7 +16,7 @@ function Hero() {
       <style jsx>{`
         @media (min-width: 768px) {
           .hero-background {
-            background-image: url('images/hero22.jpeg');
+            background-image: url('images/hero21.jpg');
           }
         }
         @media (max-width: 767px) {
