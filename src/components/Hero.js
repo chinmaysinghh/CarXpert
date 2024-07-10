@@ -41,7 +41,7 @@ function Hero() {
         <video
           ref={mobileVideoRef}
           className="block md:hidden absolute inset-0 w-full h-full object-cover"
-          src="videos/bgmobile.mp4"
+          src="videos/bgdesktop.mp4"
           autoPlay
           loop
           muted
