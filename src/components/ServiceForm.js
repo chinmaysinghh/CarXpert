@@ -148,8 +148,8 @@ function ServiceForm() {
                 Next <FontAwesomeIcon icon={faArrowRight} className="ml-2" />
               </button>
             ) : (
-              <button type="submit" disabled={!isStepValid} className={`${isStepValid ? 'bg-green-500 hover:bg-green-600' : 'bg-gray-300 cursor-not-allowed'} text-white font-bold py-2 px-4 rounded-full transition duration-300 ml-auto`}>
-                Submit
+              <button type="submit" disabled={!isStepValid} className={`${isStepValid ? 'bg-blue-500 hover:bg-blue-600' : 'bg-gray-300 cursor-not-allowed'} text-white font-bold py-2 px-4 rounded-full transition duration-300 ml-auto`}>
+                Book Service
                 <FontAwesomeIcon icon={faCalendarCheck} className="ml-2" />
               </button>
             )}
