@@ -8,12 +8,13 @@ import ServiceForm from './components/ServiceForm';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import AdminArea from './components/AdminArea';
-import Preloader from './components/Preloader'; // Import Preloader component
+import Preloader from './components/Preloader';
+import ScrollArrow from './components/ScrollArrow'; // Import ScrollToTopArrow component
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import './App.css'; // Import your CSS file
+import './App.css';
 
 function App() {
   useEffect(() => {
@@ -29,7 +30,7 @@ function App() {
   return (
     <Router>
       <div className="bg-gray-100 text-gray-800">
-        <Preloader /> {/* Here I have added Preloader component */}
+        <Preloader />
         <Header />
         <ToastContainer
           position="top-center"
@@ -52,6 +53,7 @@ function App() {
                 <ServiceForm />
                 <Contact />
                 <Footer />
+                <ScrollArrow /> {/* Include ScrollToTopArrow component here */}
               </>
             } />
             <Route path="/admin" element={<AdminArea />} />
