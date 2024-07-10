@@ -16,12 +16,12 @@ function Hero() {
       <style jsx>{`
         @media (min-width: 768px) {
           .hero-background {
-            background-image: url('images/hero2.png');
+            background-image: url('images/hero13.jpg');
           }
         }
         @media (max-width: 767px) {
           .hero-background {
-            background-image: url('images/hero3.png');
+            background-image: url('images/hero13.jpg');
           }
         }
       `}</style>
