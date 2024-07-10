@@ -9,11 +9,10 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 import AdminArea from './components/AdminArea';
 import Preloader from './components/Preloader';
-import ScrollArrow from './components/ScrollArrow'; // Import ScrollToTopArrow component
+import ScrollArrow from './components/ScrollArrow'; // Import ScrollArrow component
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { Toaster } from 'react-hot-toast';
 import './App.css';
 
 function App() {
@@ -32,16 +31,9 @@ function App() {
       <div className="bg-gray-100 text-gray-800">
         <Preloader />
         <Header />
-        <ToastContainer
+        <Toaster 
           position="top-center"
-          autoClose={3000}
-          hideProgressBar={false}
-          newestOnTop={false}
-          closeOnClick
-          rtl={false}
-          pauseOnFocusLoss
-          draggable
-          pauseOnHover
+          reverseOrder={false}
         />
         <div id="main-content" style={{ display: 'none' }}>
           <Routes>
@@ -53,7 +45,7 @@ function App() {
                 <ServiceForm />
                 <Contact />
                 <Footer />
-                <ScrollArrow /> {/* Include ScrollToTopArrow component here */}
+                <ScrollArrow /> {/* Include ScrollArrow component here */}
               </>
             } />
             <Route path="/admin" element={<AdminArea />} />

@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import toast from 'react-hot-toast';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCalendarCheck, faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import ProgressBar from './ProgressBar';
@@ -34,19 +33,19 @@ function ServiceForm() {
     saveToLocalStorage(formData, 'serviceFormData');
     toast.success('Booking Done!', {
       position: "top-center",
-      autoClose: 3000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
+      duration: 3000,
     });
-    e.target.reset();
-    setFormData({
-      name: '', email: '', phone: '', carModel: '', service: '',
-      date: '', time: '', dropOrPickup: '', comments: '', photos: null
-    });
-    setCurrentStep(1);
+    
+    // Reset form and progress bar after a short delay
+    setTimeout(() => {
+      e.target.reset();
+      setFormData({
+        name: '', email: '', phone: '', carModel: '', service: '',
+        date: '', time: '', dropOrPickup: '', comments: '', photos: null
+      });
+      setCurrentStep(1);
+      setIsCompleted(false);
+    }, 1000);
   };
 
   const saveToLocalStorage = (data, key) => {
@@ -80,6 +79,11 @@ function ServiceForm() {
       }
     };
     validateStep();
+
+    // Reset isCompleted when returning to step 1
+    if (currentStep === 1) {
+      setIsCompleted(false);
+    }
   }, [currentStep, formData]);
 
   const renderStep = () => {
@@ -140,12 +144,13 @@ function ServiceForm() {
               </button>
             )}
             {currentStep < totalSteps ? (
-              <button type="button" onClick={nextStep} disabled={!isStepValid} className={`${isStepValid ? 'bg-blue-500 hover:bg-blue-600' : 'bg-gray-400 cursor-not-allowed'} text-white font-bold py-2 px-4 rounded-full transition duration-300 ml-auto`}>
+              <button type="button" onClick={nextStep} disabled={!isStepValid} className={`${isStepValid ? 'bg-blue-500 hover:bg-blue-600' : 'bg-gray-300 cursor-not-allowed'} text-white font-bold py-2 px-4 rounded-full transition duration-300`}>
                 Next <FontAwesomeIcon icon={faArrowRight} className="ml-2" />
               </button>
             ) : (
-              <button type="submit" disabled={!isStepValid} className={`${isStepValid ? 'bg-green-500 hover:bg-green-600' : 'bg-gray-400 cursor-not-allowed'} text-white font-bold py-2 px-4 rounded-full transition duration-300 ml-auto`}>
-                Book Service <FontAwesomeIcon icon={faCalendarCheck} className="ml-2" />
+              <button type="submit" disabled={!isStepValid} className={`${isStepValid ? 'bg-green-500 hover:bg-green-600' : 'bg-gray-300 cursor-not-allowed'} text-white font-bold py-2 px-4 rounded-full transition duration-300`}>
+                Submit
+                <FontAwesomeIcon icon={faCalendarCheck} className="ml-2" />
               </button>
             )}
           </div>

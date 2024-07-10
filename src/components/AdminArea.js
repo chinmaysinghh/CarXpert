@@ -70,7 +70,7 @@ function AdminArea() {
     <div className="py-20 px-8 bg-gray-100 min-h-screen">
       <h2 className="text-5xl font-bold text-center mb-12 text-gray-800">Admin Area</h2>
       <div className="mx-auto w-11/12 max-w-7xl grid grid-cols-1 md:grid-cols-2 gap-12">
-        <div className="col-span-1 md:col-span-2 p-8 bg-white rounded-lg shadow-lg transition-all duration-500 transform hover:scale-105">
+        <div className="col-span-1 md:col-span-2 p-8 bg-white rounded-lg shadow-lg">
           <div className="flex justify-center mb-4">
             <button
               className={`px-4 py-2 mr-2 rounded ${showContactData ? 'bg-blue-500 text-white' : 'bg-gray-300 text-gray-600'}`}
@@ -101,7 +101,7 @@ function AdminArea() {
                     </thead>
                     <tbody>
                       {contactData.map((entry, index) => (
-                        <tr key={index} className="hover:bg-gray-100">
+                        <tr key={index} className="bg-gray-50 hover:bg-gray-100">
                           <td className="py-3 px-4 border-b">{entry.name}</td>
                           <td className="py-3 px-4 border-b">{entry.email}</td>
                           <td className="py-3 px-4 border-b">{entry.phone}</td>
@@ -115,12 +115,12 @@ function AdminArea() {
                 <p className="text-center text-gray-600">No contact form submissions yet.</p>
               )}
               <button
-                  onClick={exportContactData}
-                  className={`bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-full transition duration-300 transform hover:-translate-y-1 flex items-center justify-center ${contactData.length === 0 && 'opacity-50 cursor-not-allowed'}`}
-                  disabled={contactData.length === 0}
-                >
-                  Export Contact <FontAwesomeIcon icon={faFileExcel} className="ml-2" />
-                </button>
+                onClick={exportContactData}
+                className={`mt-4 bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-full flex items-center justify-center ${contactData.length === 0 && 'opacity-50 cursor-not-allowed'}`}
+                disabled={contactData.length === 0}
+              >
+                Export Contact <FontAwesomeIcon icon={faFileExcel} className="ml-2" />
+              </button>
             </>
           ) : (
             <>
@@ -145,7 +145,7 @@ function AdminArea() {
                     </thead>
                     <tbody>
                       {serviceData.map((entry, index) => (
-                        <tr key={index} className="hover:bg-gray-100">
+                        <tr key={index} className="bg-gray-50 hover:bg-gray-100">
                           <td className="py-3 px-4 border-b">{entry.name}</td>
                           <td className="py-3 px-4 border-b">{entry.email}</td>
                           <td className="py-3 px-4 border-b">{entry.phone}</td>
@@ -175,18 +175,18 @@ function AdminArea() {
                 <p className="text-center text-gray-600">No service bookings yet.</p>
               )}
               <button
-                  onClick={exportServiceData}
-                  className={`bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-full transition duration-300 transform hover:-translate-y-1 flex items-center justify-center ${serviceData.length === 0 && 'opacity-50 cursor-not-allowed'}`}
-                  disabled={serviceData.length === 0}
-                >
-                  Export Booking <FontAwesomeIcon icon={faFileExcel} className="ml-2" />
-                </button>
-            </>
-          )}
-        </div>
-      </div>
-    </div>
-  );
+                onClick={exportServiceData}
+                className={`mt-4 bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-full flex items-center justify-center ${serviceData.length === 0 && 'opacity-50 cursor-not-allowed'}`}
+                disabled={serviceData.length === 0}
+              >
+                Export Service <FontAwesomeIcon icon={faFileExcel} className="ml-2" />
+</button>
+</>
+)}
+</div>
+</div>
+</div>
+);
 }
 
 export default AdminArea;

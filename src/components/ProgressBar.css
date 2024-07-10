@@ -18,6 +18,8 @@
     background-color: #1c3faa;
     transition: width 0.3s ease;
     z-index: 1;
+    /* Adjust the initial width to cover the first step */
+    width: calc(100% / (3 - 1) / 2);
 }
 
 .progress-bar::before {
@@ -71,5 +73,15 @@
 
 .step.completed .step-label,
 .step.active .step-label {
+    color: #1c3faa;
+}
+
+/* Style for the first step to ensure it's always highlighted */
+.step:first-child .step-circle {
+    border-color: #1c3faa;
+    color: #1c3faa;
+}
+
+.step:first-child .step-label {
     color: #1c3faa;
 }
