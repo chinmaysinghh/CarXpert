@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPaperPlane } from '@fortawesome/free-solid-svg-icons';
-import { toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import toast from 'react-hot-toast';
 
 function Contact() {
   const [formData, setFormData] = useState({
@@ -35,8 +34,8 @@ function Contact() {
     let isValid = true;
     let errors = {};
 
-    if (!formData.name.trim()) {
-      errors.name = 'Name is required';
+    if (!formData.name.trim() || !/^[a-zA-Z\s]{2,}$/.test(formData.name)) {
+      errors.name = 'Name must be at least 2 characters long and contain only letters and spaces';
       isValid = false;
     }
     if (!formData.email.trim()) {
@@ -50,11 +49,11 @@ function Contact() {
       errors.phone = 'Phone number is required';
       isValid = false;
     } else if (!/^\d{10}$/.test(formData.phone)) {
-      errors.phone = 'Phone number is invalid';
+      errors.phone = 'Phone number must be exactly 10 digits';
       isValid = false;
     }
-    if (!formData.message.trim()) {
-      errors.message = 'Message is required';
+    if (!formData.message.trim() || formData.message.trim().length < 10) {
+      errors.message = 'Message must be at least 10 characters long';
       isValid = false;
     }
 
@@ -68,12 +67,7 @@ function Contact() {
       saveToLocalStorage(formData, 'contactFormData');
       toast.success('Message Sent!', {
         position: "top-center",
-        autoClose: 3000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
+        duration: 3000,
       });
       setFormData({
         name: '',
@@ -85,12 +79,7 @@ function Contact() {
     } else {
       toast.error('Please correct the errors in the form.', {
         position: "top-center",
-        autoClose: 3000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
+        duration: 3000,
       });
     }
   };
