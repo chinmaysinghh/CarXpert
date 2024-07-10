@@ -105,6 +105,11 @@ function Contact() {
     <section id="contact" className="py-20 px-5 bg-gray-800 text-white" data-aos="fade-up">
       <div className="container mx-auto">
         <h2 className="text-4xl font-bold text-center mb-12">Contact Us</h2>
+        <div className="text-center mb-8">
+          <p className="mb-2">CarXpert</p>
+          <p className="mb-2">Plot No. 15, A.B.C. Road, Ahmedabad, Gujarat-Pincode</p>
+          <p className="mb-2">Email: <a href="mailto:info@carxpert.com" className="text-blue-400">info@carxpert.com</a></p>
+        </div>
         <form onSubmit={handleSubmit} className="max-w-lg mx-auto" data-aos="fade-up" data-aos-delay="100">
           <div className="mb-4">
             <input type="text" name="name" placeholder="Your Name" required className={`w-full p-3 bg-gray-200 rounded text-gray-800 ${errors.name ? 'border-red-500' : ''}`} onChange={handleChange} />

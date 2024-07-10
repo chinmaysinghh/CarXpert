@@ -25,7 +25,7 @@ function Hero() {
       </div>
       <div className="absolute inset-0 bg-black opacity-30"></div>
       <div className="relative z-10">
-        <h2 className="text-4xl md:text-5xl font-bold mb-6 animate-fadeInUp">Step into CarXpert</h2>
+        <h2 className="text-4xl md:text-5xl font-bold mb-6 animate-fadeInUp">Expert Service, Every Time.</h2>
         <a href="#serviceForm" className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-full transition duration-300 transform hover:-translate-y-1" data-aos="zoom-in" data-aos-delay="200">
           <FontAwesomeIcon icon={faCalendarCheck} /> Book a Service
         </a>
