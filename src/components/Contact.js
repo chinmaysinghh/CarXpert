@@ -118,10 +118,10 @@ function Contact() {
           </div>
         </form>
         <div className="text-center">
-  <p className="mb-2 flex items-center justify-center flex-wrap">
-    <FontAwesomeIcon icon={faMapMarkerAlt} className="mr-2 flex-shrink-0" />
-    <span>CarXpert, Plot No. 15, A.B.C. Road, Ahmedabad, Gujarat-Pincode</span>
-  </p>
+  <p className="mb-2 flex items-center justify-center flex-wrap sm:flex-nowrap">
+  <FontAwesomeIcon icon={faMapMarkerAlt} className="mr-2 flex-shrink-0 mb-2 sm:mb-0" />
+  <span>CarXpert, Plot No. 15, A.B.C. Road, Ahmedabad, Gujarat-Pincode</span>
+</p>
   <p className="mb-2 flex items-center justify-center">
     <FontAwesomeIcon icon={faEnvelope} className="mr-2 flex-shrink-0" />
     <a href="mailto:info@carxpert.com" className="text-blue-400">info@carxpert.com</a>
