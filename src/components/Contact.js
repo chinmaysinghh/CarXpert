@@ -101,7 +101,7 @@ function Contact() {
           </p>
           <p className="mb-2">
             <FontAwesomeIcon icon={faEnvelope} className="mr-2" />
-            Email: <a href="mailto:info@carxpert.com" className="text-blue-400">info@carxpert.com</a>
+             <a href="mailto:info@carxpert.com" className="text-blue-400">info@carxpert.com</a>
           </p>
         </div>
         <form onSubmit={handleSubmit} className="max-w-lg mx-auto" data-aos="fade-up" data-aos-delay="100">
