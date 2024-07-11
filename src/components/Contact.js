@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPaperPlane } from '@fortawesome/free-solid-svg-icons';
+import { faPaperPlane, faMapMarkerAlt, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import toast from 'react-hot-toast';
 
 function Contact() {
@@ -95,9 +95,14 @@ function Contact() {
       <div className="container mx-auto">
         <h2 className="text-4xl font-bold text-center mb-12">Contact Us</h2>
         <div className="text-center mb-8">
-          <p className="mb-2">CarXpert</p>
-          <p className="mb-2">Plot No. 15, A.B.C. Road, Ahmedabad, Gujarat-Pincode</p>
-          <p className="mb-2">Email: <a href="mailto:info@carxpert.com" className="text-blue-400">info@carxpert.com</a></p>
+          <p className="mb-2">
+            <FontAwesomeIcon icon={faMapMarkerAlt} className="mr-2" />
+            CarXpert, Plot No. 15, A.B.C. Road, Ahmedabad, Gujarat-Pincode
+          </p>
+          <p className="mb-2">
+            <FontAwesomeIcon icon={faEnvelope} className="mr-2" />
+            Email: <a href="mailto:info@carxpert.com" className="text-blue-400">info@carxpert.com</a>
+          </p>
         </div>
         <form onSubmit={handleSubmit} className="max-w-lg mx-auto" data-aos="fade-up" data-aos-delay="100">
           <div className="mb-4">
