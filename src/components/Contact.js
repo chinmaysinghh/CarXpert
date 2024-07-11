@@ -94,16 +94,6 @@ function Contact() {
     <section id="contact" className="py-20 px-5 bg-gray-800 text-white" data-aos="fade-up">
       <div className="container mx-auto">
         <h2 className="text-4xl font-bold text-center mb-12">Contact Us</h2>
-        <div className="text-center mb-8">
-          <p className="mb-2">
-            <FontAwesomeIcon icon={faMapMarkerAlt} className="mr-2" />
-            CarXpert, Plot No. 15, A.B.C. Road, Ahmedabad, Gujarat-Pincode
-          </p>
-          <p className="mb-2">
-            <FontAwesomeIcon icon={faEnvelope} className="mr-2" />
-             <a href="mailto:info@carxpert.com" className="text-blue-400">info@carxpert.com</a>
-          </p>
-        </div>
         <form onSubmit={handleSubmit} className="max-w-lg mx-auto" data-aos="fade-up" data-aos-delay="100">
           <div className="mb-4">
             <input type="text" name="name" placeholder="Your Name" required className={`w-full p-3 bg-gray-200 rounded text-gray-800 ${errors.name ? 'border-red-500' : ''}`} onChange={handleChange} />
@@ -121,12 +111,22 @@ function Contact() {
             <textarea name="message" placeholder="Message" required className={`w-full p-3 bg-gray-200 rounded h-32 text-gray-800 ${errors.message ? 'border-red-500' : ''}`} onChange={handleChange}></textarea>
             {errors.message && <p className="text-red-500 text-sm">{errors.message}</p>}
           </div>
-          <div className="flex justify-center">
+          <div className="flex justify-center mb-8">
             <button type="submit" className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-full transition duration-300 transform hover:-translate-y-1 flex items-center justify-center">
               Send Message <FontAwesomeIcon icon={faPaperPlane} className="ml-2" />
             </button>
           </div>
         </form>
+        <div className="text-center">
+          <p className="mb-2 flex items-center justify-center">
+            <FontAwesomeIcon icon={faMapMarkerAlt} className="mr-2" />
+            <span>CarXpert, Plot No. 15, A.B.C. Road, Ahmedabad, Gujarat-Pincode</span>
+          </p>
+          <p className="mb-2 flex items-center justify-center">
+            <FontAwesomeIcon icon={faEnvelope} className="mr-2" />
+            <a href="mailto:info@carxpert.com" className="text-blue-400">info@carxpert.com</a>
+          </p>
+        </div>
       </div>
     </section>
   );
