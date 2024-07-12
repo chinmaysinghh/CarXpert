@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import toast from 'react-hot-toast';
 
@@ -7,16 +7,8 @@ function AdminLogin() {
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
 
-  useEffect(() => {
-    console.log('Production environment variables:', process.env);
-  }, []);
-
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Entered username:', username);
-    console.log('Entered password:', password);
-    console.log('Expected username:', process.env.REACT_APP_ADMIN_USERNAME);
-    console.log('Expected password:', process.env.REACT_APP_ADMIN_PASSWORD);
 
     if (
       username === process.env.REACT_APP_ADMIN_USERNAME &&
@@ -27,9 +19,6 @@ function AdminLogin() {
       navigate('/admin');
     } else {
       toast.error('Invalid username or password');
-      console.log('Login failed. Comparison results:');
-      console.log('Username match:', username === process.env.REACT_APP_ADMIN_USERNAME);
-      console.log('Password match:', password === process.env.REACT_APP_ADMIN_PASSWORD);
     }
   };
 
