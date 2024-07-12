@@ -36,5 +36,3 @@ The project is deployed using Vercel. You can access the live version of the web
 ## Contributing
 Contributions are welcome! If you want to contribute to this project, feel free to fork the repository and submit a pull request.
 
-## License
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
