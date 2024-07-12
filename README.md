@@ -1,6 +1,6 @@
 # CarXpert
 
-CarXpert is a responsive single-page Progressive Web Application (PWA) for a car service and detailing center. It includes sections for Home, About Us, Services Offered, Contact Us, and an Admin Area for managing Service Bookings and Contact Form submissions.
+CarXpert is your expert partner in automotive care and detailing services. This project showcases a modern and user-friendly website designed to offer seamless navigation and a visually appealing interface. Whether you're looking for routine maintenance, detailed repairs, or professional detailing to enhance your vehicle's aesthetics, CarXpert is your trusted partner.
 
 ## Table of Contents
 - [Features](#features)
