@@ -46,7 +46,7 @@ function AdminArea() {
         Email: entry.email,
         Phone: entry.phone,
         CarModel: entry.carModel,
-        Service: entry.service,
+        Services: Array.isArray(entry.services) ? entry.services.join(', ') : entry.services,
         DropOff: entry.dropOrPickup === 'drop-off' ? 'Yes' : 'No',
         Pickup: entry.dropOrPickup === 'pickup' ? 'Yes' : 'No',
         'Preferred Date': entry.date,
@@ -60,13 +60,8 @@ function AdminArea() {
     }
   };
 
-  const handleDownload = (file) => {
-    const url = URL.createObjectURL(file);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = file.name;
-    a.click();
-    URL.revokeObjectURL(url);
+  const handleDownload = (url) => {
+    window.open(url, '_blank');
   };
 
   const handleLogout = () => {
@@ -146,7 +141,7 @@ function AdminArea() {
                         <th className="py-3 px-4 border-b-2">Email</th>
                         <th className="py-3 px-4 border-b-2">Phone</th>
                         <th className="py-3 px-4 border-b-2">Car Model</th>
-                        <th className="py-3 px-4 border-b-2">Service</th>
+                        <th className="py-3 px-4 border-b-2">Services</th>
                         <th className="py-3 px-4 border-b-2">Drop Off</th>
                         <th className="py-3 px-4 border-b-2">Pickup</th>
                         <th className="py-3 px-4 border-b-2">Preferred Date</th>
@@ -162,7 +157,9 @@ function AdminArea() {
                           <td className="py-3 px-4 border-b">{entry.email}</td>
                           <td className="py-3 px-4 border-b">{entry.phone}</td>
                           <td className="py-3 px-4 border-b">{entry.carModel}</td>
-                          <td className="py-3 px-4 border-b">{entry.service}</td>
+                          <td className="py-3 px-4 border-b">
+                            {Array.isArray(entry.services) ? entry.services.join(', ') : entry.services}
+                          </td>
                           <td className="py-3 px-4 border-b">{entry.dropOrPickup === 'drop-off' ? 'Yes' : 'No'}</td>
                           <td className="py-3 px-4 border-b">{entry.dropOrPickup === 'pickup' ? 'Yes' : 'No'}</td>
                           <td className="py-3 px-4 border-b">{entry.date}</td>
@@ -189,13 +186,25 @@ function AdminArea() {
             </>
           )}
           
-          <button
-            onClick={showContactData ? exportContactData : exportServiceData}
-            className={`mt-6 bg-${showContactData ? 'blue' : 'green'}-500 hover:bg-${showContactData ? 'blue' : 'green'}-600 text-white font-bold py-3 px-6 rounded-full flex items-center justify-center ${(showContactData ? contactData : serviceData).length === 0 && 'opacity-50 cursor-not-allowed'}`}
-            disabled={(showContactData ? contactData : serviceData).length === 0}
-          >
-            Export {showContactData ? 'Contact' : 'Service'} <FontAwesomeIcon icon={faFileExcel} className="ml-2" />
-          </button>
+          <div className="mt-6">
+            {showContactData ? (
+              <button
+                onClick={exportContactData}
+                className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded"
+              >
+                <FontAwesomeIcon icon={faFileExcel} className="mr-2" />
+                Export Contact Data to Excel
+              </button>
+            ) : (
+              <button
+                onClick={exportServiceData}
+                className="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded"
+              >
+                <FontAwesomeIcon icon={faFileExcel} className="mr-2" />
+                Export Service Data to Excel
+              </button>
+            )}
+          </div>
         </div>
       </div>
     </div>

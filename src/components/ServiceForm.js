@@ -13,7 +13,7 @@ const servicesList = [
 
 function ServiceForm() {
   const [formData, setFormData] = useState({
-    name: '', email: '', phone: '', carModel: '', service: '',
+    name: '', email: '', phone: '', carModel: '', services: [],
     date: '', time: '', dropOrPickup: '', comments: '', photos: null
   });
 
@@ -22,9 +22,21 @@ function ServiceForm() {
   const [isStepValid, setIsStepValid] = useState(false);
   const [isCompleted, setIsCompleted] = useState(false);
 
+  // Get current date in YYYY-MM-DD format for min attribute of date input
+  const currentDate = new Date().toISOString().split('T')[0];
+
   const handleChange = (e) => {
-    const { name, value, type, files } = e.target;
-    setFormData({ ...formData, [name]: type === 'file' ? files[0] : value });
+    const { name, value, type, files, checked } = e.target;
+    if (name === 'services') {
+      setFormData(prevData => ({
+        ...prevData,
+        services: checked
+          ? [...prevData.services, value]
+          : prevData.services.filter(service => service !== value)
+      }));
+    } else {
+      setFormData({ ...formData, [name]: type === 'file' ? files[0] : value });
+    }
   };
 
   const handleSubmit = (e) => {
@@ -40,7 +52,7 @@ function ServiceForm() {
     setTimeout(() => {
       e.target.reset();
       setFormData({
-        name: '', email: '', phone: '', carModel: '', service: '',
+        name: '', email: '', phone: '', carModel: '', services: [],
         date: '', time: '', dropOrPickup: '', comments: '', photos: null
       });
       setCurrentStep(1);
@@ -69,7 +81,7 @@ function ServiceForm() {
           setIsStepValid(formData.name && formData.email && formData.phone && formData.carModel);
           break;
         case 2:
-          setIsStepValid(formData.service && formData.date && formData.time && formData.dropOrPickup);
+          setIsStepValid(formData.services.length > 0 && formData.date && formData.time && formData.dropOrPickup);
           break;
         case 3:
           setIsStepValid(true);
@@ -99,16 +111,35 @@ function ServiceForm() {
         );
       case 2:
         return (
-          <div className="grid grid-cols-2 gap-6">
-            <select name="service" className="w-full p-3 bg-gray-200 rounded" onChange={handleChange} required value={formData.service}>
-              <option value="">Select Service</option>
+          <div className="col-span-2">
+            <label className="block mb-2">Select Services:</label>
+            <div className="grid grid-cols-2 gap-2">
               {servicesList.map((service, index) => (
-                <option key={index} value={service}>{service}</option>
+                <label key={index} className="flex items-center bg-white p-3 rounded shadow hover:shadow-lg transition-shadow duration-300">
+                  <input
+                    type="checkbox"
+                    name="services"
+                    value={service}
+                    checked={formData.services.includes(service)}
+                    onChange={handleChange}
+                    className="form-checkbox h-5 w-5 text-blue-500 rounded focus:ring-0"
+                  />
+                  <span className="ml-2">{service}</span>
+                </label>
               ))}
-            </select>
-            <input type="date" name="date" placeholder="Preferred Date" required className="w-full p-3 bg-gray-200 rounded" onChange={handleChange} value={formData.date} />
-            <input type="time" name="time" placeholder="Preferred Time" required className="w-full p-3 bg-gray-200 rounded" onChange={handleChange} value={formData.time} />
-            <select name="dropOrPickup" className="w-full p-3 bg-gray-200 rounded" onChange={handleChange} required value={formData.dropOrPickup}>
+            </div>
+            <input 
+              type="date" 
+              name="date" 
+              placeholder="Preferred Date" 
+              required 
+              className="w-full p-3 bg-gray-200 rounded mt-6" 
+              onChange={handleChange} 
+              value={formData.date} 
+              min={currentDate}  // This line disables dates before the current date
+            />
+            <input type="time" name="time" placeholder="Preferred Time" required className="w-full p-3 bg-gray-200 rounded mt-6" onChange={handleChange} value={formData.time} />
+            <select name="dropOrPickup" className="w-full p-3 bg-gray-200 rounded mt-6" onChange={handleChange} required value={formData.dropOrPickup}>
               <option value="">Select Option</option>
               <option value="drop-off">Drop-off</option>
               <option value="pickup">Pickup</option>
