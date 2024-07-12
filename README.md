@@ -22,7 +22,7 @@ CarXpert is your expert partner in automotive care and detailing services. This 
 ## Technologies Used
 
 - **Frontend:** HTML5, CSS3, JavaScript (ES6+), React.js, Tailwind CSS
-- **Data Handling:** LocalStorage for storing the data
+- **Data Handling:** LocalStorage for data storage
 - **Libraries:** FontAwesome for icons, react-hot-toast for notifications
 - **Version Control:** Git, GitHub
 - **Deployment:** Vercel
