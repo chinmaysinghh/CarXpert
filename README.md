@@ -1,6 +1,6 @@
 # CarXpert
 
-CarXpert is your expert partner in automotive care and detailing services. This project showcases a modern and user-friendly website designed to offer seamless navigation and a visually appealing interface. Whether you're looking for routine maintenance, detailed repairs, or professional detailing to enhance your vehicle's aesthetics, CarXpert is your trusted partner.
+CarXpert is your trusted partner in automotive care and detailing services. This project features a sleek, modern website designed for effortless navigation and an aesthetically pleasing interface. Whether you need routine maintenance, detailed repairs, or professional detailing to elevate your vehicle's appearance, CarXpert is here to provide expert service and ensure customer satisfaction partner.
 
 ## Table of Contents
 
