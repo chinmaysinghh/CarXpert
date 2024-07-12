@@ -68,15 +68,14 @@ function Services() {
       </div>
       {!showAllServices && (
         <div className="flex justify-center mt-8">
-          <a
-            href="#viewAllServices"
+          <button
             onClick={toggleShowAll}
             className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-full transition duration-300 transform hover:-translate-y-1" 
             data-aos="zoom-in" 
             data-aos-delay="200"
           >
             View All <FontAwesomeIcon icon={faArrowDown} className="ml-2" />
-          </a>
+          </button>
         </div>
       )}
     </section>
