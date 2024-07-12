@@ -1,6 +1,5 @@
-// App.js
 import React, { useEffect } from 'react';
-import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import Services from './components/Services';
@@ -9,9 +8,8 @@ import ServiceForm from './components/ServiceForm';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import AdminArea from './components/AdminArea';
-import AdminLogin from './components/AdminLogin';
 import Preloader from './components/Preloader';
-import ScrollArrow from './components/ScrollArrow';
+import ScrollArrow from './components/ScrollArrow'; // Import ScrollArrow component
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { Toaster } from 'react-hot-toast';
@@ -27,11 +25,6 @@ function App() {
       once: true,
     });
   }, []);
-
-  const ProtectedRoute = ({ children }) => {
-    const isAdminLoggedIn = localStorage.getItem('isAdminLoggedIn') === 'true';
-    return isAdminLoggedIn ? children : <Navigate to="/admin-login" />;
-  };
 
   return (
     <Router>
@@ -52,18 +45,10 @@ function App() {
                 <ServiceForm />
                 <Contact />
                 <Footer />
-                <ScrollArrow />
+                <ScrollArrow /> {/* Include ScrollArrow component here */}
               </>
             } />
-            <Route path="/admin-login" element={<AdminLogin />} />
-            <Route 
-              path="/admin" 
-              element={
-                <ProtectedRoute>
-                  <AdminArea />
-                </ProtectedRoute>
-              } 
-            />
+            <Route path="/admin" element={<AdminArea />} />
           </Routes>
         </div>
       </div>

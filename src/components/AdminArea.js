@@ -2,14 +2,11 @@ import React, { useState, useEffect } from 'react';
 import * as XLSX from 'xlsx';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFileExcel } from '@fortawesome/free-solid-svg-icons';
-import { useNavigate } from 'react-router-dom';
-import toast from 'react-hot-toast';
 
 function AdminArea() {
   const [contactData, setContactData] = useState([]);
   const [serviceData, setServiceData] = useState([]);
   const [showContactData, setShowContactData] = useState(true);
-  const navigate = useNavigate();
 
   useEffect(() => {
     const contactFormData = JSON.parse(localStorage.getItem('contactFormData')) || [];
@@ -35,7 +32,7 @@ function AdminArea() {
       }));
       exportToExcel(formattedData, 'contact_data.xlsx');
     } else {
-      toast.error('No contact data available to export.');
+      alert('No contact data available to export.');
     }
   };
 
@@ -56,7 +53,7 @@ function AdminArea() {
       }));
       exportToExcel(formattedData, 'service_data.xlsx');
     } else {
-      toast.error('No service data available to export.');
+      alert('No service data available to export.');
     }
   };
 
@@ -69,27 +66,12 @@ function AdminArea() {
     URL.revokeObjectURL(url);
   };
 
-  const handleLogout = () => {
-    localStorage.removeItem('isAdminLoggedIn');
-    toast.success('Logged out successfully');
-    navigate('/admin-login');
-  };
-
   return (
-    <div className="min-h-screen bg-gray-100 pt-20">
-      <div className="container mx-auto px-4 py-8">
-        <div className="flex justify-between items-center mb-8">
-          <h2 className="text-4xl font-bold text-gray-800">Admin Area</h2>
-          <button
-            onClick={handleLogout}
-            className="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded"
-          >
-            Logout
-          </button>
-        </div>
-        
-        <div className="bg-white rounded-lg shadow-lg p-8">
-          <div className="flex justify-center mb-6">
+    <div className="py-20 px-8 bg-gray-100 min-h-screen">
+      <h2 className="text-5xl font-bold text-center mb-12 text-gray-800">Admin Area</h2>
+      <div className="mx-auto w-11/12 max-w-7xl grid grid-cols-1 md:grid-cols-2 gap-12">
+        <div className="col-span-1 md:col-span-2 p-8 bg-white rounded-lg shadow-lg">
+          <div className="flex justify-center mb-4">
             <button
               className={`px-4 py-2 mr-2 rounded ${showContactData ? 'bg-blue-500 text-white' : 'bg-gray-300 text-gray-600'}`}
               onClick={() => setShowContactData(true)}
@@ -103,12 +85,11 @@ function AdminArea() {
               Service Info
             </button>
           </div>
-          
           {showContactData ? (
             <>
-              <h3 className="text-2xl font-semibold mb-4 text-gray-700">Contact Form Data</h3>
+              <h3 className="text-3xl font-semibold mb-6 text-gray-700">Contact Form Data</h3>
               {contactData.length > 0 ? (
-                <div className="overflow-x-auto">
+                <div className="overflow-auto">
                   <table className="min-w-full bg-white">
                     <thead>
                       <tr className="bg-blue-500 text-white">
@@ -133,12 +114,19 @@ function AdminArea() {
               ) : (
                 <p className="text-center text-gray-600">No contact form submissions yet.</p>
               )}
+              <button
+                onClick={exportContactData}
+                className={`mt-4 bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-full flex items-center justify-center ${contactData.length === 0 && 'opacity-50 cursor-not-allowed'}`}
+                disabled={contactData.length === 0}
+              >
+                Export Contact <FontAwesomeIcon icon={faFileExcel} className="ml-2" />
+              </button>
             </>
           ) : (
             <>
-              <h3 className="text-2xl font-semibold mb-4 text-gray-700">Service Form Data</h3>
+              <h3 className="text-3xl font-semibold mb-6 text-gray-700">Service Form Data</h3>
               {serviceData.length > 0 ? (
-                <div className="overflow-x-auto">
+                <div className="overflow-auto">
                   <table className="min-w-full bg-white">
                     <thead>
                       <tr className="bg-green-500 text-white">
@@ -186,20 +174,19 @@ function AdminArea() {
               ) : (
                 <p className="text-center text-gray-600">No service bookings yet.</p>
               )}
-            </>
-          )}
-          
-          <button
-            onClick={showContactData ? exportContactData : exportServiceData}
-            className={`mt-6 bg-${showContactData ? 'blue' : 'green'}-500 hover:bg-${showContactData ? 'blue' : 'green'}-600 text-white font-bold py-3 px-6 rounded-full flex items-center justify-center ${(showContactData ? contactData : serviceData).length === 0 && 'opacity-50 cursor-not-allowed'}`}
-            disabled={(showContactData ? contactData : serviceData).length === 0}
-          >
-            Export {showContactData ? 'Contact' : 'Service'} <FontAwesomeIcon icon={faFileExcel} className="ml-2" />
-          </button>
-        </div>
-      </div>
-    </div>
-  );
+              <button
+                onClick={exportServiceData}
+                className={`mt-4 bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-full flex items-center justify-center ${serviceData.length === 0 && 'opacity-50 cursor-not-allowed'}`}
+                disabled={serviceData.length === 0}
+              >
+                Export Service <FontAwesomeIcon icon={faFileExcel} className="ml-2" />
+</button>
+</>
+)}
+</div>
+</div>
+</div>
+);
 }
 
 export default AdminArea;
