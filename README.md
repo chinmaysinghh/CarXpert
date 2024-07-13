@@ -42,3 +42,72 @@ The project is deployed using Vercel. You can access the live version of the web
 ## Contributing
 
 Contributions are welcome! If you want to contribute to this project, feel free to fork the repository and submit a pull request.
+
+## Project Structure
+
+```
+Car Service -react
+└─ car-service-center
+   ├─ .env
+   ├─ package-lock.json
+   ├─ package.json
+   ├─ public
+   │  ├─ favicon.ico
+   │  ├─ images
+   │  │  ├─ about.png
+   │  │  ├─ acrepair.jpg
+   │  │  ├─ battery.jpg
+   │  │  ├─ batterycheck.jpg
+   │  │  ├─ brakeservice.jpg
+   │  │  ├─ carxpert.png
+   │  │  ├─ ceramic.jpg
+   │  │  ├─ detailing.jpg
+   │  │  ├─ enginetune.jpg
+   │  │  ├─ healthcheck.jpg
+   │  │  ├─ hero18.jpg
+   │  │  ├─ hero2.png
+   │  │  ├─ hero3.png
+   │  │  ├─ ogimage.png
+   │  │  ├─ oil.jpg
+   │  │  ├─ ppf.jpg
+   │  │  ├─ tirerotation.jpg
+   │  │  └─ wheelalign.jpg
+   │  ├─ index.html
+   │  ├─ manifest.json
+   │  ├─ robots.txt
+   │  └─ videos
+   │     ├─ bgdesktop.mp4
+   │     ├─ bgmobile.mp4
+   │     ├─ bgtest.mp4
+   │     ├─ bgvideo.mp4
+   │     └─ bgvideo2.mp4
+   ├─ README.md
+   ├─ src
+   │  ├─ App.css
+   │  ├─ App.js
+   │  ├─ App.test.js
+   │  ├─ components
+   │  │  ├─ About.js
+   │  │  ├─ AdminArea.js
+   │  │  ├─ AdminLogin.js
+   │  │  ├─ Contact.js
+   │  │  ├─ Footer.js
+   │  │  ├─ Header.js
+   │  │  ├─ Hero.js
+   │  │  ├─ Preloader.css
+   │  │  ├─ Preloader.js
+   │  │  ├─ ProgressBar.css
+   │  │  ├─ ProgressBar.js
+   │  │  ├─ ProtectedRoute.js
+   │  │  ├─ ScrollArrow.css
+   │  │  ├─ ScrollArrow.js
+   │  │  ├─ ServiceForm.js
+   │  │  └─ Services.js
+   │  ├─ index.css
+   │  ├─ index.js
+   │  ├─ logo.svg
+   │  ├─ reportWebVitals.js
+   │  └─ setupTests.js
+   └─ tailwind.config.js
+
+```
